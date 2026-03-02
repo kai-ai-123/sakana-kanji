@@ -10,11 +10,3 @@ export function GakuUeSvgSm() {
   );
 }
 
-/** 形検索エリア用（大） */
-export function GakuUeSvgLg() {
-  return (
-    <span style={{ fontFamily: FONT, fontSize: "6rem", lineHeight: 1, display: "inline-block", transform: "scaleX(1.3)" }}>
-      {CHAR}
-    </span>
-  );
-}

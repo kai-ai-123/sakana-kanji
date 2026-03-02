@@ -19,21 +19,3 @@ export function WagoMigiSvgSm() {
   );
 }
 
-/** 形検索エリア用（大）: 鰖の右部分 */
-export function WagoMigiSvgLg() {
-  // font-size=160、x=82 から右端まで（文字中央より少し右でカット）
-  return (
-    <svg width="56" height="112" viewBox="78 10 82 164" style={{ display: "block", margin: "0 auto" }}>
-      <text
-        x="80"
-        y="156"
-        fontSize="160"
-        textAnchor="middle"
-        fontFamily={FONT}
-        fill="currentColor"
-      >
-        鰖
-      </text>
-    </svg>
-  );
-}
