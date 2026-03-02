@@ -38,7 +38,7 @@ export default function ReadingSearch({ allData, onFilter }: Props) {
       value={query}
       onChange={(e) => setQuery(e.target.value)}
       placeholder="例：さけ、マグロ、たい"
-      className="block mx-auto w-1/3 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-sky-300"
+      className="block mx-auto w-full sm:w-1/2 lg:w-1/3 rounded-2xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-sky-300"
       style={{ fontSize: "16px", background: "#ffffff", border: "1px solid #e8e8e8", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
     />
   );
