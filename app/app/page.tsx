@@ -50,8 +50,8 @@ export default function Home() {
           </div>
           {/* 右：画像（sm以上で表示・タイトル＋タブ全高） */}
           <div className="flex items-center gap-2 self-stretch py-2 pr-6 pl-2 overflow-hidden">
-            <img src="/wakame.png" alt="" className="h-12 sm:h-[100px] w-auto scale-125" />
-            <img src="/kumanomi.png" alt="" className="h-12 sm:h-[100px] w-auto scale-125" />
+            <img src="/wakame.png" alt="" className="h-12 sm:h-[80px] w-auto scale-125" />
+            <img src="/kumanomi.png" alt="" className="h-12 sm:h-[80px] w-auto scale-125" />
           </div>
         </div>
       </div>
