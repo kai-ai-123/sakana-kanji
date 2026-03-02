@@ -15,5 +15,7 @@ fullscreen-compare.html
 # その他
 *.url
 *.png
+!app/public/*.png
 *.jpg
+!app/public/*.jpg
 *.txt
