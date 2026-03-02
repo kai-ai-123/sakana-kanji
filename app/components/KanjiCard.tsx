@@ -21,7 +21,7 @@ export default function KanjiCard({ entry }: Props) {
           {[entry.kanji, ...(entry.variants ?? [])].map((k, i) => (
             <span key={k} className="flex items-center gap-2">
               {i > 0 && <span className="text-xl text-gray-300 font-normal">･</span>}
-              <span className="text-5xl font-bold" style={{ color: "#006680" }}>{k}</span>
+              <span className="text-5xl font-bold" style={{ color: "#1a1a2e" }}>{k}</span>
             </span>
           ))}
         </div>
@@ -54,7 +54,7 @@ export default function KanjiCard({ entry }: Props) {
               {[entry.kanji, ...(entry.variants ?? [])].map((k, i) => (
                 <span key={k} className="flex items-center gap-3">
                   {i > 0 && <span className="text-3xl text-gray-300 font-normal">･</span>}
-                  <span className="text-8xl font-bold" style={{ color: "#006680" }}>{k}</span>
+                  <span className="text-8xl font-bold" style={{ color: "#1a1a2e" }}>{k}</span>
                 </span>
               ))}
             </div>
