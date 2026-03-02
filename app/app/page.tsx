@@ -29,7 +29,7 @@ export default function Home() {
               <div className="px-6 flex">
                 <button
                   onClick={() => setActiveTab("reading")}
-                  className="py-3 px-6 text-sm font-bold transition-all border-b-2"
+                  className="py-3 px-3 sm:px-6 text-sm font-bold transition-all border-b-2"
                   style={activeTab === "reading"
                     ? { color: "#0088AA", borderColor: "#0088AA" }
                     : { color: "#9ca3af", borderColor: "transparent" }}
@@ -38,7 +38,7 @@ export default function Home() {
                 </button>
                 <button
                   onClick={() => setActiveTab("shape")}
-                  className="py-3 px-6 text-sm font-bold transition-all border-b-2"
+                  className="py-3 px-3 sm:px-6 text-sm font-bold transition-all border-b-2"
                   style={activeTab === "shape"
                     ? { color: "#0088AA", borderColor: "#0088AA" }
                     : { color: "#9ca3af", borderColor: "transparent" }}
@@ -49,9 +49,9 @@ export default function Home() {
             </div>
           </div>
           {/* 右：画像（sm以上で表示・タイトル＋タブ全高） */}
-          <div className="hidden sm:flex items-center gap-2 self-stretch py-2 pr-4 pl-2">
-            <img src="/wakame.png" alt="" style={{ height: "100px", width: "auto" }} />
-            <img src="/kumanomi.png" alt="" style={{ height: "100px", width: "auto" }} />
+          <div className="flex items-center gap-2 self-stretch py-2 pr-4 pl-2">
+            <img src="/wakame.png" alt="" className="h-10 sm:h-[100px] w-auto" />
+            <img src="/kumanomi.png" alt="" className="h-10 sm:h-[100px] w-auto" />
           </div>
         </div>
       </div>
