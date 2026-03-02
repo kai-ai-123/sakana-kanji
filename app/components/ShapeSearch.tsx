@@ -46,7 +46,7 @@ export default function ShapeSearch() {
                 ? "text-white shadow-md"
                 : ""
             }`}
-            style={selectedStructure === s ? { background: "rgba(255,255,255,0.25)", color: "#ffffff" } : { background: "rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.6)" }}
+            style={selectedStructure === s ? { background: "#0088AA", color: "#ffffff" } : { background: "rgba(255,255,255,0.7)", color: "#0088AA" }}
           >
             {s}
           </button>
@@ -56,7 +56,7 @@ export default function ShapeSearch() {
       {/* 漢字表示エリア */}
       {selectedStructure === "左右" ? (
         /* 左右：横並び（魚53px＋つくり43px＝96px正方形） */
-        <div className="flex items-center justify-center gap-1 rounded-2xl shadow-md" style={{ background: "#ffffff", width: "240px", height: "240px", margin: "0 auto" }}>
+        <div className="flex items-center justify-center gap-1 rounded-2xl shadow-md" style={{ background: "#F5FFFE", width: "240px", height: "240px", margin: "0 auto" }}>
           <span className="text-gray-800 leading-none select-none">
             <KamasuHidariSvg />
           </span>
@@ -79,7 +79,7 @@ export default function ShapeSearch() {
         </div>
       ) : (
         /* 上下：縦並び（つくり48px＋魚46px＝94px正方形） */
-        <div className="flex flex-col items-center justify-center gap-1 rounded-2xl shadow-md" style={{ background: "#ffffff", width: "240px", height: "240px", margin: "0 auto" }}>
+        <div className="flex flex-col items-center justify-center gap-1 rounded-2xl shadow-md" style={{ background: "#F5FFFE", width: "240px", height: "240px", margin: "0 auto" }}>
           <button
             onClick={() => setIsModalOpen(true)}
             className={`rounded-2xl transition-all flex items-center justify-center overflow-hidden w-36 h-[82px] ${

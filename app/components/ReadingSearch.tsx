@@ -37,7 +37,7 @@ export default function ReadingSearch() {
         onChange={(e) => setQuery(e.target.value)}
         placeholder="例：さけ、マグロ、たい"
         className="w-full rounded-2xl px-4 py-3 text-base shadow-md focus:outline-none focus:ring-2 focus:ring-sky-300 border-none"
-        style={{ background: "#ffffff" }}
+        style={{ background: "#F5FFFE" }}
       />
       {query && filtered.length === 0 ? (
         <p className="text-center text-gray-400 py-12">見つかりませんでした</p>

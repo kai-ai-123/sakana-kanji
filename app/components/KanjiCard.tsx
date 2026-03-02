@@ -15,7 +15,7 @@ export default function KanjiCard({ entry }: Props) {
       <button
         onClick={() => setOpen(true)}
         className="rounded-2xl p-4 flex flex-col items-center gap-2 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all w-full text-left"
-        style={{ background: "#ffffff" }}
+        style={{ background: "#F5FFFE" }}
       >
         <div className="flex items-center gap-2">
           {[entry.kanji, ...(entry.variants ?? [])].map((k, i) => (
@@ -47,7 +47,7 @@ export default function KanjiCard({ entry }: Props) {
         >
           <div
             className="rounded-2xl max-w-sm w-full shadow-2xl p-8 flex flex-col items-center gap-4 animate-popUp"
-            style={{ background: "#ffffff" }}
+            style={{ background: "#F5FFFE" }}
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center gap-3">
