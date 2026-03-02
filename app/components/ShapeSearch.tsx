@@ -67,12 +67,13 @@ export default function ShapeSearch() {
                 ? "text-blue-600 hover:bg-blue-50"
                 : "text-5xl font-bold text-gray-300 border-2 border-dashed border-gray-300 hover:border-blue-300 hover:text-blue-300"
             }`}
+            style={{ clipPath: "inset(0)" }}
             title={selectedTsukuri ? "クリックして変更" : "クリックして選ぶ"}
           >
             {selectedTsukuri
               ? selectedTsukuri === "鰖右"
                 ? <WagoMigiSvgLg />
-                : <span style={{ fontSize: "5rem", lineHeight: 1, display: "inline-block", transform: "scaleY(1.7) translateY(10%)" }}>{selectedTsukuri}</span>
+                : <span style={{ fontSize: "5rem", lineHeight: 1, display: "inline-block", transform: "scaleY(1.7)" }}>{selectedTsukuri}</span>
               : "？"
             }
           </button>
@@ -87,6 +88,7 @@ export default function ShapeSearch() {
                 ? "text-blue-600 hover:bg-blue-50"
                 : "text-5xl font-bold text-gray-300 border-2 border-dashed border-gray-300 hover:border-blue-300 hover:text-blue-300"
             }`}
+            style={{ clipPath: "inset(0)" }}
             title={selectedTsukuri ? "クリックして変更" : "クリックして選ぶ"}
           >
             {selectedTsukuri
