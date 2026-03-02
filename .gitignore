@@ -1,0 +1,19 @@
+node_modules/
+.next/
+.env*
+*.local
+
+# デザイン作業ファイル（コミット不要）
+color-preview.html
+design-preview.html
+compare.html
+fullscreen-compare.html
+
+# Claude作業ディレクトリ
+.claude/
+
+# その他
+*.url
+*.png
+*.jpg
+*.txt

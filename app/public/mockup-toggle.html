@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>構造トグル モックアップ</title>
+<style>
+  body {
+    font-family: "Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic Medium","Yu Gothic",Meiryo,sans-serif;
+    background: #f9fafb; padding: 40px;
+  }
+  h2 { color: #374151; margin: 32px 0 8px; font-size: 16px; }
+
+  /* トグルボタン共通 */
+  .toggle-group { display: flex; gap: 8px; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 4px;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    border: none; cursor: pointer;
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+  .btn.active { background: #2563eb; color: white; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+  .btn.inactive { background: #e5e7eb; color: #4b5563; }
+  .btn.inactive:hover { background: #d1d5db; }
+
+  .q { font-size: 20px; font-weight: bold; color: inherit; line-height: 1; }
+  .plus { font-size: 12px; opacity: 0.5; }
+</style>
+</head>
+<body>
+
+<h2>現状（テキストのみ）</h2>
+<div class="toggle-group">
+  <button class="btn active">左右</button>
+  <button class="btn inactive">上下</button>
+</div>
+
+<h2>案A：SVGクリップ ＋ ？ をボタン内に並べる</h2>
+<div class="toggle-group">
+  <!-- 左右ボタン：魳の左半分（魚）＋ ？ -->
+  <button class="btn active">
+    <svg width="22" height="30" viewBox="0 44 80 80">
+      <text x="40" y="118" font-size="80" text-anchor="middle"
+            font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic Medium','Yu Gothic',Meiryo,sans-serif"
+            fill="currentColor">魳</text>
+    </svg>
+    <span class="plus">＋</span>
+    <span class="q">？</span>
+  </button>
+
+  <!-- 上下ボタン：？ ＋ 鯊の下半分（魚） -->
+  <button class="btn inactive" style="flex-direction:column; gap:2px; padding: 10px 24px;">
+    <span class="q">？</span>
+    <span class="plus">＋</span>
+    <svg width="30" height="18" viewBox="0 44 80 42">
+      <text x="40" y="78" font-size="80" text-anchor="middle"
+            font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic Medium','Yu Gothic',Meiryo,sans-serif"
+            fill="currentColor">鯊</text>
+    </svg>
+  </button>
+</div>
+
+<h2>案B：サイズを少し大きめに</h2>
+<div class="toggle-group">
+  <button class="btn active">
+    <svg width="28" height="38" viewBox="0 40 80 80">
+      <text x="40" y="118" font-size="80" text-anchor="middle"
+            font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic Medium','Yu Gothic',Meiryo,sans-serif"
+            fill="currentColor">魳</text>
+    </svg>
+    <span class="plus" style="font-size:14px;">＋</span>
+    <span class="q" style="font-size:26px;">？</span>
+  </button>
+
+  <button class="btn inactive" style="flex-direction:column; gap:2px; padding: 10px 28px;">
+    <span class="q" style="font-size:26px;">？</span>
+    <span class="plus" style="font-size:14px;">＋</span>
+    <svg width="38" height="22" viewBox="0 48 80 38">
+      <text x="40" y="78" font-size="80" text-anchor="middle"
+            font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic Medium','Yu Gothic',Meiryo,sans-serif"
+            fill="currentColor">鯊</text>
+    </svg>
+  </button>
+</div>
+
+<h2>案C：ボタン内をさらにコンパクトに（アイコン的）</h2>
+<div class="toggle-group">
+  <button class="btn active" style="padding: 8px 16px; gap: 3px;">
+    <svg width="18" height="26" viewBox="0 44 80 80">
+      <text x="40" y="118" font-size="80" text-anchor="middle"
+            font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic Medium','Yu Gothic',Meiryo,sans-serif"
+            fill="currentColor">魳</text>
+    </svg>
+    <span style="font-size:10px; opacity:0.6;">＋</span>
+    <span style="font-size:18px; font-weight:bold;">？</span>
+  </button>
+
+  <button class="btn inactive" style="flex-direction:column; gap:1px; padding: 8px 20px;">
+    <span style="font-size:18px; font-weight:bold;">？</span>
+    <span style="font-size:10px; opacity:0.5;">＋</span>
+    <svg width="26" height="16" viewBox="0 48 80 38">
+      <text x="40" y="78" font-size="80" text-anchor="middle"
+            font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic Medium','Yu Gothic',Meiryo,sans-serif"
+            fill="currentColor">鯊</text>
+    </svg>
+  </button>
+</div>
+
+</body>
+</html>
