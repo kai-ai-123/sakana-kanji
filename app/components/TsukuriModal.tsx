@@ -50,7 +50,8 @@ export default function TsukuriModal({ isOpen, onClose, onSelect, tsukuriList }:
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="つくりを入力..."
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-400"
+            className="w-full rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-300"
+            style={{ background: "#ffffff", border: "1px solid #e8e8e8", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
             autoFocus
           />
         </div>
