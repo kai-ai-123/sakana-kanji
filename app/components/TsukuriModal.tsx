@@ -32,7 +32,7 @@ export default function TsukuriModal({ isOpen, onClose, onSelect, tsukuriList }:
     >
       <div
         className="rounded-2xl max-w-sm w-full shadow-2xl flex flex-col max-h-[80vh]"
-        style={{ background: "#F5FFFE" }}
+        style={{ background: "#ffffff" }}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between p-6 pb-4 shrink-0">
