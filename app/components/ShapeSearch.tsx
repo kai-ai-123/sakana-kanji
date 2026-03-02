@@ -60,7 +60,7 @@ export default function ShapeSearch() {
           style={{ background: "#ffffff", border: "1px solid #e8e8e8", boxShadow: "0 2px 8px rgba(0,0,0,0.1)", width: "240px", height: "240px", margin: "0 auto" }}
           title="クリックして変更"
         >
-          <span style={{ fontSize: "8rem", lineHeight: 1 }}>{matched[0].kanji}</span>
+          <span style={{ fontSize: "8rem", lineHeight: 1, color: "#005577" }}>{matched[0].kanji}</span>
           <span className="text-xs text-gray-400 mt-3">タップして変更</span>
         </button>
       ) : selectedStructure === "左右" ? (
