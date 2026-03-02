@@ -10,9 +10,9 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<Tab>("reading");
 
   return (
-    <main className="min-h-screen" style={{ background: "#E8FBF5" }}>
-      {/* Header（青） */}
-      <header style={{ background: "#0088AA" }}>
+    <main className="min-h-screen" style={{ background: "#ffffff" }}>
+      {/* Header（青・固定） */}
+      <header className="sticky top-0 z-10" style={{ background: "#0088AA" }}>
         <div className="max-w-2xl mx-auto px-4 pt-8 pb-5">
           <h1 className="text-3xl font-black mb-4" style={{ color: "#ffffff" }}>魚へんの漢字 検索サイト</h1>
           {/* Tabs */}
