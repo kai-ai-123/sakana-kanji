@@ -52,7 +52,6 @@ export default function TsukuriModal({ isOpen, onClose, onSelect, tsukuriList }:
             placeholder="つくりを入力..."
             className="w-full rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-sky-300"
             style={{ fontSize: "16px", background: "#ffffff", border: "1px solid #e8e8e8", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
-            autoFocus
           />
         </div>
         <div className="overflow-y-auto px-4 pb-4">
