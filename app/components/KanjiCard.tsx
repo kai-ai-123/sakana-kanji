@@ -14,26 +14,26 @@ export default function KanjiCard({ entry }: Props) {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="rounded-2xl p-4 flex flex-col items-center justify-center gap-2 hover:shadow-md hover:-translate-y-1 transition-all w-full h-full min-h-28 text-left"
+        className="rounded-2xl p-4 flex flex-col items-center justify-center gap-2 hover:shadow-md hover:-translate-y-1 transition-all w-full h-32 text-left overflow-hidden"
         style={{ background: "#ffffff", border: "1px solid #e8e8e8", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
       >
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 flex-wrap justify-center">
           {[entry.kanji, ...(entry.variants ?? [])].map((k, i) => (
-            <span key={k} className="flex items-center gap-2">
-              {i > 0 && <span className="text-xl text-gray-300 font-normal">･</span>}
+            <span key={k} className="flex items-center gap-1">
+              {i > 0 && <span className="text-base text-gray-300 font-normal">･</span>}
               <span className="text-5xl font-bold" style={{ color: "#1a1a2e" }}>{k}</span>
             </span>
           ))}
         </div>
-        <div className="text-center space-y-0.5">
+        <div className="w-full text-center space-y-0.5 overflow-hidden">
           {entry.kun.length > 0 && (
-            <div className="text-sm text-gray-700">
+            <div className="text-sm text-gray-700 truncate">
               <span className="font-medium text-gray-400 text-xs">訓</span>{" "}
               {entry.kun.join("・")}
             </div>
           )}
           {entry.on.length > 0 && (
-            <div className="text-xs text-gray-400">
+            <div className="text-xs text-gray-400 truncate">
               <span className="font-medium">音</span> {entry.on.join("・")}
             </div>
           )}

@@ -68,7 +68,7 @@ export default function Home() {
           {filteredEntries.length === 0 ? (
             <p className="text-center text-gray-400 py-12">見つかりませんでした</p>
           ) : (
-            <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3">
               {filteredEntries.map((entry) => (
                 <KanjiCard key={entry.kanji} entry={entry} />
               ))}
