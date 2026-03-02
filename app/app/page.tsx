@@ -17,34 +17,42 @@ export default function Home() {
 
   return (
     <main className="min-h-screen" style={{ background: "#0088AA" }}>
-      {/* Header（白・固定） */}
-      <header className="sticky top-0 z-10" style={{ background: "#ffffff" }}>
-        <div className="px-6 pt-6 pb-4">
-          <h1 className="text-3xl font-black" style={{ color: "#0088AA" }}>魚へんの漢字 検索サイト</h1>
-        </div>
-      </header>
-
-      {/* Tabs */}
-      <div className="sticky top-[72px] z-10 bg-white border-b" style={{ borderColor: "#e5e7eb" }}>
-        <div className="px-6 flex">
-          <button
-            onClick={() => setActiveTab("reading")}
-            className="py-3 px-6 text-sm font-bold transition-all border-b-2"
-            style={activeTab === "reading"
-              ? { color: "#0088AA", borderColor: "#0088AA" }
-              : { color: "#9ca3af", borderColor: "transparent" }}
-          >
-            読みから探す
-          </button>
-          <button
-            onClick={() => setActiveTab("shape")}
-            className="py-3 px-6 text-sm font-bold transition-all border-b-2"
-            style={activeTab === "shape"
-              ? { color: "#0088AA", borderColor: "#0088AA" }
-              : { color: "#9ca3af", borderColor: "transparent" }}
-          >
-            形から探す
-          </button>
+      {/* Header + Tabs（まとめてsticky） */}
+      <div className="sticky top-0 z-10" style={{ background: "#ffffff" }}>
+        <div className="flex">
+          {/* 左：タイトル＋タブ */}
+          <div className="flex-1 min-w-0">
+            <div className="px-6 flex items-center" style={{ height: "72px" }}>
+              <h1 className="text-3xl font-black" style={{ color: "#0088AA" }}>魚へん漢字帳</h1>
+            </div>
+            <div className="border-b" style={{ borderColor: "#e5e7eb" }}>
+              <div className="px-6 flex">
+                <button
+                  onClick={() => setActiveTab("reading")}
+                  className="py-3 px-6 text-sm font-bold transition-all border-b-2"
+                  style={activeTab === "reading"
+                    ? { color: "#0088AA", borderColor: "#0088AA" }
+                    : { color: "#9ca3af", borderColor: "transparent" }}
+                >
+                  読みから探す
+                </button>
+                <button
+                  onClick={() => setActiveTab("shape")}
+                  className="py-3 px-6 text-sm font-bold transition-all border-b-2"
+                  style={activeTab === "shape"
+                    ? { color: "#0088AA", borderColor: "#0088AA" }
+                    : { color: "#9ca3af", borderColor: "transparent" }}
+                >
+                  形から探す
+                </button>
+              </div>
+            </div>
+          </div>
+          {/* 右：画像（sm以上で表示・タイトル＋タブ全高） */}
+          <div className="hidden sm:flex items-center gap-2 self-stretch py-2 pr-4 pl-2">
+            <img src="/wakame.png" alt="" style={{ height: "100px", width: "auto" }} />
+            <img src="/kumanomi.png" alt="" style={{ height: "100px", width: "auto" }} />
+          </div>
         </div>
       </div>
 
