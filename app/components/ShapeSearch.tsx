@@ -54,7 +54,7 @@ export default function ShapeSearch({ onFilter }: Props) {
                 ? "text-white shadow-md"
                 : ""
             }`}
-            style={selectedStructure === s ? { background: "#ffffff", color: "#0088AA" } : { background: "rgba(255,255,255,0.25)", color: "#ffffff" }}
+            style={selectedStructure === s ? { background: "#0088AA", color: "#ffffff" } : { background: "rgba(255,255,255,0.7)", color: "#0088AA" }}
           >
             {s === "左右" ? "魚が左" : "魚が下"}
           </button>

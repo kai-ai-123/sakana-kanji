@@ -48,33 +48,32 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Content */}
-      <div className="px-6 py-6">
-        <h2 className="text-2xl font-black" style={{ color: "#ffffff" }}>
+      {/* 検索UI */}
+      <div className="px-6 py-6" style={{ background: "#ffffff" }}>
+        <h2 className="text-2xl font-black" style={{ color: "#111827" }}>
           {activeTab === "reading" ? "読みから探す" : "形から探す"}
         </h2>
-        <p className="text-sm mt-1 mb-6" style={{ color: "rgba(255,255,255,0.7)" }}>
+        <p className="text-sm mt-1 mb-6" style={{ color: "#6b7280" }}>
           {activeTab === "reading" ? "読み仮名や漢字で検索できます" : "へんとつくりの組み合わせから選べます"}
         </p>
 
-        {/* 検索UI（タブで切り替え） */}
         {activeTab === "reading"
           ? <ReadingSearch key="reading" onFilter={setFilteredEntries} allData={data} />
           : <ShapeSearch key="shape" onFilter={setFilteredEntries} />
         }
+      </div>
 
-        {/* カードグリッド（共通） */}
-        <div className="mt-8">
-          {filteredEntries.length === 0 ? (
-            <p className="text-center text-gray-400 py-12">見つかりませんでした</p>
-          ) : (
-            <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-3">
-              {filteredEntries.map((entry) => (
-                <KanjiCard key={entry.kanji} entry={entry} />
-              ))}
-            </div>
-          )}
-        </div>
+      {/* カードグリッド（青背景） */}
+      <div className="px-6 py-6">
+        {filteredEntries.length === 0 ? (
+          <p className="text-center py-12" style={{ color: "rgba(255,255,255,0.6)" }}>見つかりませんでした</p>
+        ) : (
+          <div className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-5 lg:grid-cols-5 gap-3">
+            {filteredEntries.map((entry) => (
+              <KanjiCard key={entry.kanji} entry={entry} />
+            ))}
+          </div>
+        )}
       </div>
     </main>
   );
