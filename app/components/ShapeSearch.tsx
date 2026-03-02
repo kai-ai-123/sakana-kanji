@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useMemo } from "react";
 import kanjiData from "@/data/kanji.json";
-import KanjiCard from "./KanjiCard";
 import TsukuriModal from "./TsukuriModal";
 import { KanjiEntry } from "@/types";
 import { KamasuHidariSvg, HazeShitaSvg } from "./StructureSampleSvg";
@@ -11,7 +10,11 @@ const data = kanjiData as KanjiEntry[];
 
 type Structure = "左右" | "上下";
 
-export default function ShapeSearch() {
+type Props = {
+  onFilter: (entries: KanjiEntry[]) => void;
+};
+
+export default function ShapeSearch({ onFilter }: Props) {
   const [selectedStructure, setSelectedStructure] = useState<Structure>("左右");
   const [selectedTsukuri, setSelectedTsukuri] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,11 +23,18 @@ export default function ShapeSearch() {
     data.filter((e) => e.structure === selectedStructure).flatMap((e) => e.tsukuri)
   )].sort((a, b) => a.localeCompare(b, "ja"));
 
-  const matched = selectedTsukuri
-    ? data.filter(
-        (e) => e.structure === selectedStructure && e.tsukuri.includes(selectedTsukuri)
-      )
-    : data.filter((e) => e.structure === selectedStructure);
+  const matched = useMemo(() =>
+    selectedTsukuri
+      ? data.filter(
+          (e) => e.structure === selectedStructure && e.tsukuri.includes(selectedTsukuri)
+        )
+      : data.filter((e) => e.structure === selectedStructure),
+    [selectedStructure, selectedTsukuri]
+  );
+
+  useEffect(() => {
+    onFilter(matched);
+  }, [matched, onFilter]);
 
   function handleStructureChange(s: Structure) {
     setSelectedStructure(s);
@@ -44,7 +54,7 @@ export default function ShapeSearch() {
                 ? "text-white shadow-md"
                 : ""
             }`}
-            style={selectedStructure === s ? { background: "#0088AA", color: "#ffffff" } : { background: "rgba(255,255,255,0.7)", color: "#0088AA" }}
+            style={selectedStructure === s ? { background: "#ffffff", color: "#0088AA" } : { background: "rgba(255,255,255,0.25)", color: "#ffffff" }}
           >
             {s === "左右" ? "魚が左" : "魚が下"}
           </button>
@@ -93,16 +103,6 @@ export default function ShapeSearch() {
         </div>
       )}
 
-      {/* 結果 */}
-      {matched.length > 0 && (
-        <div className="space-y-3 mt-8">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-            {matched.map((entry) => (
-              <KanjiCard key={entry.kanji} entry={entry} />
-            ))}
-          </div>
-        </div>
-      )}
 
 
       <TsukuriModal
