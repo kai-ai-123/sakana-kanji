@@ -15,7 +15,7 @@ export default function KanjiCard({ entry }: Props) {
       <button
         onClick={() => setOpen(true)}
         className="rounded-2xl p-4 flex flex-col items-center gap-2 hover:shadow-md hover:-translate-y-1 transition-all w-full text-left"
-        style={{ background: "#ffffff", border: "1px solid #e8e8e8" }}
+        style={{ background: "#ffffff", border: "1px solid #e8e8e8", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
       >
         <div className="flex items-center gap-2">
           {[entry.kanji, ...(entry.variants ?? [])].map((k, i) => (
