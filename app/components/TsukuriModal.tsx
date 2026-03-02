@@ -27,16 +27,16 @@ export default function TsukuriModal({ isOpen, onClose, onSelect, tsukuriList }:
 
   return (
     <div
-      className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black/70 z-50 flex items-start justify-center pt-24 p-4"
       onClick={handleClose}
     >
       <div
-        className="rounded-2xl max-w-sm w-full shadow-2xl flex flex-col max-h-[80vh]"
-        style={{ background: "#ffffff" }}
+        className="rounded-2xl w-full shadow-2xl flex flex-col max-h-[65vh]"
+        style={{ background: "#ffffff", maxWidth: "280px" }}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between p-6 pb-4 shrink-0">
-          <h2 className="text-base font-bold text-gray-800">つくりを選んでください</h2>
+        <div className="flex items-center justify-between px-4 pt-4 pb-3 shrink-0">
+          <h2 className="text-sm font-bold text-gray-800">つくりを選んでください</h2>
           <button
             onClick={handleClose}
             className="text-gray-400 hover:text-gray-600 text-2xl leading-none w-8 h-8 flex items-center justify-center"
@@ -44,32 +44,32 @@ export default function TsukuriModal({ isOpen, onClose, onSelect, tsukuriList }:
             ×
           </button>
         </div>
-        <div className="px-6 pb-3 shrink-0">
+        <div className="px-4 pb-3 shrink-0">
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="つくりを入力..."
-            className="w-full rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-300"
-            style={{ background: "#ffffff", border: "1px solid #e8e8e8", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
+            className="w-full rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-sky-300"
+            style={{ fontSize: "16px", background: "#ffffff", border: "1px solid #e8e8e8", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
             autoFocus
           />
         </div>
-        <div className="overflow-y-auto px-6 pb-6">
-        <div className="grid grid-cols-5 gap-2">
-          {filtered.map((tsukuri) => (
-            <button
-              key={tsukuri}
-              onClick={() => {
-                onSelect(tsukuri);
-                handleClose();
-              }}
-              className="text-2xl py-3 rounded-xl border border-gray-200 hover:bg-blue-50 hover:border-blue-400 hover:text-blue-700 transition-colors flex items-center justify-center"
-            >
-              {tsukuri === "學上" ? <GakuUeSvgSm /> : tsukuri === "鰖右" ? <WagoMigiSvgSm /> : tsukuri}
-            </button>
-          ))}
-        </div>
+        <div className="overflow-y-auto px-4 pb-4">
+          <div className="grid grid-cols-4 gap-2">
+            {filtered.map((tsukuri) => (
+              <button
+                key={tsukuri}
+                onClick={() => {
+                  onSelect(tsukuri);
+                  handleClose();
+                }}
+                className="text-2xl py-3 rounded-xl border border-gray-200 hover:bg-blue-50 hover:border-blue-400 hover:text-blue-700 transition-colors flex items-center justify-center"
+              >
+                {tsukuri === "學上" ? <GakuUeSvgSm /> : tsukuri === "鰖右" ? <WagoMigiSvgSm /> : tsukuri}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
