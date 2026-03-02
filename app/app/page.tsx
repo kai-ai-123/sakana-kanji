@@ -19,9 +19,9 @@ export default function Home() {
     <main className="min-h-screen" style={{ background: "#0088AA" }}>
       {/* Header + Tabs（まとめてsticky） */}
       <div className="sticky top-0 z-10" style={{ background: "#ffffff" }}>
-        <div className="flex">
+        <div className="flex justify-between">
           {/* 左：タイトル＋タブ */}
-          <div className="flex-1 min-w-0">
+          <div className="min-w-0">
             <div className="px-6 flex items-center" style={{ height: "72px" }}>
               <h1 className="text-3xl font-black" style={{ color: "#0088AA" }}>魚へん漢字帳</h1>
             </div>
@@ -29,7 +29,7 @@ export default function Home() {
               <div className="px-6 flex">
                 <button
                   onClick={() => setActiveTab("reading")}
-                  className="py-3 px-3 sm:px-6 text-sm font-bold transition-all border-b-2"
+                  className="py-3 px-2 sm:px-6 text-sm font-bold transition-all border-b-2"
                   style={activeTab === "reading"
                     ? { color: "#0088AA", borderColor: "#0088AA" }
                     : { color: "#9ca3af", borderColor: "transparent" }}
@@ -38,7 +38,7 @@ export default function Home() {
                 </button>
                 <button
                   onClick={() => setActiveTab("shape")}
-                  className="py-3 px-3 sm:px-6 text-sm font-bold transition-all border-b-2"
+                  className="py-3 px-2 sm:px-6 text-sm font-bold transition-all border-b-2"
                   style={activeTab === "shape"
                     ? { color: "#0088AA", borderColor: "#0088AA" }
                     : { color: "#9ca3af", borderColor: "transparent" }}
@@ -49,9 +49,9 @@ export default function Home() {
             </div>
           </div>
           {/* 右：画像（sm以上で表示・タイトル＋タブ全高） */}
-          <div className="flex items-center gap-2 self-stretch py-2 pr-4 pl-2">
-            <img src="/wakame.png" alt="" className="h-10 sm:h-[100px] w-auto" />
-            <img src="/kumanomi.png" alt="" className="h-10 sm:h-[100px] w-auto" />
+          <div className="flex items-center gap-2 self-stretch py-2 pr-6 pl-2 overflow-hidden">
+            <img src="/wakame.png" alt="" className="h-12 sm:h-[100px] w-auto scale-125" />
+            <img src="/kumanomi.png" alt="" className="h-12 sm:h-[100px] w-auto scale-125" />
           </div>
         </div>
       </div>
