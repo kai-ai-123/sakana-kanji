@@ -56,7 +56,7 @@ export default function ShapeSearch() {
       {/* 漢字表示エリア */}
       {selectedStructure === "左右" ? (
         /* 左右：横並び（魚53px＋つくり43px＝96px正方形） */
-        <div className="flex items-center justify-center gap-1 rounded-2xl shadow-md" style={{ background: "#ffffff", border: "1px solid #e8e8e8", boxShadow: "0 2px 8px rgba(0,0,0,0.1)", width: "240px", height: "240px", margin: "0 auto" }}>
+        <div className="flex items-center justify-center gap-1 rounded-2xl shadow-md" style={{ background: "#ffffff", border: "1px solid #e8e8e8", boxShadow: "0 2px 8px rgba(0,0,0,0.1)", width: "240px", height: "240px", margin: "0 auto", overflow: "hidden" }}>
           <span className="text-gray-800 leading-none select-none">
             <KamasuHidariSvg />
           </span>
@@ -79,7 +79,7 @@ export default function ShapeSearch() {
         </div>
       ) : (
         /* 上下：縦並び（つくり48px＋魚46px＝94px正方形） */
-        <div className="flex flex-col items-center justify-center gap-1 rounded-2xl shadow-md" style={{ background: "#ffffff", border: "1px solid #e8e8e8", boxShadow: "0 2px 8px rgba(0,0,0,0.1)", width: "240px", height: "240px", margin: "0 auto" }}>
+        <div className="flex flex-col items-center justify-center gap-1 rounded-2xl shadow-md" style={{ background: "#ffffff", border: "1px solid #e8e8e8", boxShadow: "0 2px 8px rgba(0,0,0,0.1)", width: "240px", height: "240px", margin: "0 auto", overflow: "hidden" }}>
           <button
             onClick={() => setIsModalOpen(true)}
             className={`rounded-2xl transition-all flex items-center justify-center overflow-hidden w-36 h-[82px] ${
