@@ -5,8 +5,6 @@ import kanjiData from "@/data/kanji.json";
 import KanjiCard from "./KanjiCard";
 import TsukuriModal from "./TsukuriModal";
 import { KanjiEntry } from "@/types";
-import { GakuUeSvgLg } from "./GakuUeSvg";
-import { WagoMigiSvgLg } from "./WagoMigiSvg";
 import { KamasuHidariSvg, HazeShitaSvg } from "./StructureSampleSvg";
 
 const data = kanjiData as KanjiEntry[];
@@ -54,49 +52,40 @@ export default function ShapeSearch() {
       </div>
 
       {/* 漢字表示エリア */}
-      {selectedStructure === "左右" ? (
-        /* 左右：横並び（魚53px＋つくり43px＝96px正方形） */
+      {selectedTsukuri && matched.length > 0 ? (
+        /* 選択後：完成形の漢字を大きく表示 */
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="flex flex-col items-center justify-center rounded-2xl transition-all hover:bg-gray-50"
+          style={{ background: "#ffffff", border: "1px solid #e8e8e8", boxShadow: "0 2px 8px rgba(0,0,0,0.1)", width: "240px", height: "240px", margin: "0 auto" }}
+          title="クリックして変更"
+        >
+          <span style={{ fontSize: "8rem", lineHeight: 1 }}>{matched[0].kanji}</span>
+          <span className="text-xs text-gray-400 mt-3">タップして変更</span>
+        </button>
+      ) : selectedStructure === "左右" ? (
+        /* 左右：横並び */
         <div className="flex items-center justify-center gap-1 rounded-2xl shadow-md" style={{ background: "#ffffff", border: "1px solid #e8e8e8", boxShadow: "0 2px 8px rgba(0,0,0,0.1)", width: "240px", height: "240px", margin: "0 auto", overflow: "hidden" }}>
           <span className="text-gray-800 leading-none select-none">
             <KamasuHidariSvg />
           </span>
           <button
             onClick={() => setIsModalOpen(true)}
-            className={`rounded-2xl transition-all flex items-center justify-center overflow-hidden w-20 h-36 ${
-              selectedTsukuri
-                ? "text-blue-600 hover:bg-blue-50"
-                : "text-5xl font-bold text-gray-300 border-2 border-dashed border-gray-300 hover:border-blue-300 hover:text-blue-300"
-            }`}
-            style={{ clipPath: "inset(0)" }}
-            title={selectedTsukuri ? "クリックして変更" : "クリックして選ぶ"}
+            className="text-5xl font-bold text-gray-300 border-2 border-dashed border-gray-300 hover:border-blue-300 hover:text-blue-300 rounded-2xl transition-all flex items-center justify-center w-20 h-36"
+            title="クリックして選ぶ"
           >
-            {selectedTsukuri
-              ? selectedTsukuri === "鰖右"
-                ? <WagoMigiSvgLg />
-                : <span style={{ fontSize: "5rem", lineHeight: 1, display: "inline-block", transform: "scaleY(1.7)" }}>{selectedTsukuri}</span>
-              : "？"
-            }
+            ？
           </button>
         </div>
       ) : (
-        /* 上下：縦並び（つくり48px＋魚46px＝94px正方形） */
+        /* 上下：縦並び */
         <div className="flex flex-col items-center justify-center gap-1 rounded-2xl shadow-md" style={{ background: "#ffffff", border: "1px solid #e8e8e8", boxShadow: "0 2px 8px rgba(0,0,0,0.1)", width: "240px", height: "240px", margin: "0 auto", overflow: "hidden" }}>
           <button
             onClick={() => setIsModalOpen(true)}
-            className={`rounded-2xl transition-all flex items-center justify-center overflow-hidden w-36 h-[82px] ${
-              selectedTsukuri
-                ? "text-blue-600 hover:bg-blue-50"
-                : "text-5xl font-bold text-gray-300 border-2 border-dashed border-gray-300 hover:border-blue-300 hover:text-blue-300"
-            }`}
-            style={{ clipPath: "inset(0)" }}
-            title={selectedTsukuri ? "クリックして変更" : "クリックして選ぶ"}
+            className="text-5xl font-bold text-gray-300 border-2 border-dashed border-gray-300 hover:border-blue-300 hover:text-blue-300 rounded-2xl transition-all flex items-center justify-center w-36 h-[82px]"
+            title="クリックして選ぶ"
           >
-            {selectedTsukuri
-              ? selectedTsukuri === "學上"
-                ? <GakuUeSvgLg />
-                : <span style={{ fontSize: "5rem", lineHeight: 1, display: "inline-block", transform: "scaleX(1.6)" }}>{selectedTsukuri}</span>
-              : "？"
-            }
+            ？
           </button>
           <span className="text-gray-800 leading-none select-none">
             <HazeShitaSvg />
