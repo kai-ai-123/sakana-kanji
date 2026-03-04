@@ -37,6 +37,11 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap"
           rel="stylesheet"
         />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6478401132734580"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className="antialiased">
         <script
