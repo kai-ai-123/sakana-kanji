@@ -36,6 +36,21 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "魚へん漢字帳",
+              alternateName: "魚へんの漢字 検索サイト",
+              description: "魚へんの漢字を読みや形から調べられるサイト。居酒屋のメニューで見かける難しい漢字もすぐ調べられます。",
+              url: "https://sakanahen-kanji.vercel.app",
+              inLanguage: "ja",
+              keywords: "魚へん,魚偏,漢字,読み方,一覧,検索,居酒屋,メニュー,魚の漢字",
+            }),
+          }}
+        />
         {children}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-MDHVVRKTS0" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
