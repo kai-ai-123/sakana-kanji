@@ -3,19 +3,19 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "魚へんの漢字 検索サイト",
+  title: "魚へん漢字帳",
   description: "魚へんの漢字を読みや形から調べられるサイト。居酒屋のメニューで見かける難しい漢字もすぐ調べられます。",
   openGraph: {
-    title: "魚へんの漢字 検索サイト",
+    title: "魚へん漢字帳",
     description: "魚へんの漢字を読みや形から調べられるサイト。居酒屋のメニューで見かける難しい漢字もすぐ調べられます。",
     url: "https://sakanahen-kanji.vercel.app/",
-    siteName: "魚へんの漢字 検索サイト",
+    siteName: "魚へん漢字帳",
     locale: "ja_JP",
     type: "website",
   },
   twitter: {
-    card: "summary",
-    title: "魚へんの漢字 検索サイト",
+    card: "summary_large_image",
+    title: "魚へん漢字帳",
     description: "魚へんの漢字を読みや形から調べられるサイト。",
   },
 };

@@ -11,6 +11,7 @@ fullscreen-compare.html
 
 # Claude作業ディレクトリ
 .claude/
+.playwright-mcp/
 
 # その他
 *.url
