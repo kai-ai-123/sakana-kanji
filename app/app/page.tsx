@@ -76,7 +76,7 @@ export default function Home() {
           {filteredEntries.length === 0 ? (
             <p className="text-center text-gray-400 py-12">見つかりませんでした</p>
           ) : (
-            <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))" }}>
+            <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))" }}>
               {filteredEntries.map((entry) => (
                 <KanjiCard key={entry.kanji} entry={entry} />
               ))}

@@ -17,7 +17,7 @@ export default function KanjiCard({ entry }: Props) {
         className="rounded-2xl p-4 flex flex-col items-center justify-center gap-2 hover:shadow-md hover:-translate-y-1 transition-all w-full h-32 text-left overflow-hidden"
         style={{ background: "#ffffff", border: "1px solid #e8e8e8", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
       >
-        <div className="flex items-center gap-1 flex-wrap justify-center">
+        <div className="flex items-center gap-1 flex-nowrap justify-center">
           {[entry.kanji, ...(entry.variants ?? [])].map((k, i) => (
             <span key={k} className="flex items-center gap-1">
               {i > 0 && <span className="text-base text-gray-300 font-normal">･</span>}

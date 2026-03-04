@@ -3,14 +3,14 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "魚へん漢字帳",
+  title: "魚へん漢字帳 | 魚偏の漢字 読み方・一覧",
   verification: {
     google: "ZerhD1GcADX5frdNcJHjDXF7gjLcaOcssJnYc7xxxWE",
   },
-  description: "魚へんの漢字を読みや形から調べられるサイト。居酒屋のメニューで見かける難しい漢字もすぐ調べられます。",
+  description: "魚へん（魚偏）の漢字を読みや形から検索できるサイト。鮭・鯛・鰻・鯖など、居酒屋メニューで見かける難しい漢字の読み方・意味を一覧で確認できます。",
   openGraph: {
-    title: "魚へん漢字帳",
-    description: "魚へんの漢字を読みや形から調べられるサイト。居酒屋のメニューで見かける難しい漢字もすぐ調べられます。",
+    title: "魚へん漢字帳 | 魚偏の漢字 読み方・一覧",
+    description: "魚へん（魚偏）の漢字を読みや形から検索できるサイト。鮭・鯛・鰻・鯖など、居酒屋メニューで見かける難しい漢字の読み方・意味を一覧で確認できます。",
     url: "https://sakanahen-kanji.vercel.app/",
     siteName: "魚へん漢字帳",
     locale: "ja_JP",
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "魚へん漢字帳",
-    description: "魚へんの漢字を読みや形から調べられるサイト。",
+    title: "魚へん漢字帳 | 魚偏の漢字 読み方・一覧",
+    description: "魚へん（魚偏）の漢字を読みや形から検索できます。鮭・鯛・鰻・鯖など一覧で確認。",
   },
 };
 
