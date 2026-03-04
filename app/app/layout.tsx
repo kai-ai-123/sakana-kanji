@@ -4,6 +4,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "魚へん漢字帳",
+  verification: {
+    google: "ZerhD1GcADX5frdNcJHjDXF7gjLcaOcssJnYc7xxxWE",
+  },
   description: "魚へんの漢字を読みや形から調べられるサイト。居酒屋のメニューで見かける難しい漢字もすぐ調べられます。",
   openGraph: {
     title: "魚へん漢字帳",
