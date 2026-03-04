@@ -49,9 +49,9 @@ export default function Home() {
             </div>
           </div>
           {/* 右：画像（sm以上で表示・タイトル＋タブ全高） */}
-          <div className="flex items-center gap-2 self-stretch py-2 pr-6 pl-2 overflow-hidden">
+          <div className="flex items-end gap-2 self-stretch py-2 pr-6 pl-2 overflow-hidden">
             <img src="/wakame.png" alt="" className="h-12 sm:h-[80px] w-auto scale-125" />
-            <img src="/kumanomi.png" alt="" className="h-12 sm:h-[80px] w-auto scale-125" />
+            <img src="/kumanomi.png" alt="" className="h-12 sm:h-[80px] w-auto scale-125 mb-7" />
           </div>
         </div>
       </div>
@@ -76,7 +76,7 @@ export default function Home() {
           {filteredEntries.length === 0 ? (
             <p className="text-center text-gray-400 py-12">見つかりませんでした</p>
           ) : (
-            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3">
+            <div className="grid gap-3" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))" }}>
               {filteredEntries.map((entry) => (
                 <KanjiCard key={entry.kanji} entry={entry} />
               ))}
