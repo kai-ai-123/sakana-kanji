@@ -60,6 +60,13 @@ export default function RootLayout({
           }}
         />
         {children}
+        <footer className="py-6 text-center text-xs" style={{ background: "#f3f4f6", color: "#9ca3af" }}>
+          <div className="flex justify-center gap-6 mb-2">
+            <a href="/privacy" className="hover:underline">プライバシーポリシー</a>
+            <a href="/contact" className="hover:underline">お問い合わせ</a>
+          </div>
+          <p>© 2025 魚へん漢字帳</p>
+        </footer>
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-MDHVVRKTS0" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
